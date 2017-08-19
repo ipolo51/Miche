@@ -1,0 +1,68 @@
+<h2> Lista de tareas </h2>
+<p> <%= link_to "Crear nueva tarea", new_tarea_path %> </p>
+<ul>
+   <% @tareas.each do |t| %>
+   <li>
+      <h3> <%= t.titulo %> </h3>
+      <p>
+         <%= link_to "Ver", t %>
+ |
+ <%= link_to "Editar", edit_tarea_path(t) %>
+ |
+ <%= link_to "Eliminar", t, :confirm => "Seguro desea eliminar esta tarea?", :method => :delete %> 
+ |
+ <%= link_to "Finalizar", {:action => "finalizar", :id => t}, :confirm => "Seguro desea finalizar esta tarea?" %>
+      </p>
+   </li>
+   <% end %>
+</ul><!--<h1>Bienvenido a mi prueba</h1>
+<h3>"MARCAS"</h3>
+<h5>¿Que deseas hacer?</h5>
+<div>
+	<select id="producto" onchange="ShowSelected();" name="producto">
+		<option value="Crear">Crear</option>
+		<option value="Ver">Ver</option>
+		<option value="Editar">Editar</option>
+		<option value="Borrar">Borrar</option>
+	</select>
+
+	<h5>Nombre:</h5>
+	<input type="text" name="txt1" id="cajaDeTexto" required="true">
+	
+<script type="text/javascript">
+function ShowSelected(){
+/* Para obtener el valor */
+var cod = document.getElementById("producto").value;
+/* Para obtener el texto */
+var combo = document.getElementById("producto");
+var selected = combo.options[combo.selectedIndex].text;
+}
+
+function buscar(){
+
+if (validar()==true) {
+var ver = "ver";	
+var cod = document.getElementById("producto").value;
+alert(cod);
+
+var input = document.getElementById("cajaDeTexto").value;
+alert(input);
+accion()
+
+
+function validar(){
+	//obteniendo el valor que se puso en campo text del formulario
+        txt1 = document.getElementById("cajaDeTexto").value;
+        //la condición
+        if (txt1.length == 0) {
+            alert("el campo nombre, esta vacio");
+            return false;
+        }
+        return true;
+}
+function accion(){
+	
+</script>
+<input type="submit" name="" value="Buscar" id="boton1" onclick="buscar()">
+</div>
+-->
